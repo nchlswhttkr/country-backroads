@@ -1,0 +1,9 @@
+{
+  "name": "country-backroads",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer-core": "^10.2.0"
+  }
+}
