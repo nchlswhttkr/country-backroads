@@ -30,7 +30,7 @@ export default async (req, res) => {
     headless: true,
     args: chromium.args,
     executablePath: await chromium.executablePath,
-    defaultViewport: { width: 1800, height: 900 },
+    defaultViewport: { width: 1800, height: 700 },
   });
   const page = await browser.newPage();
 
@@ -59,14 +59,30 @@ export default async (req, res) => {
                 src: url(data:font/woff2;charset=utf-8;base64,${interItalic.toString('base64')}) format('woff2')
             }
 
+            body {
+              padding: 80px 120px;
+              margin: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            img {
+              height: 540px;
+              width: 540px;
+              box-shadow: 0 6px 16px #ccc;
+              margin-right: 80px;
+              color: #fff;
+            }
+
             p {
-              font-family: 'Inter', monospace
+              font: 48px 'Inter';
             }
         </style>
     </head>
-    <body style="padding: 180px 90px; display: flex; margin: 0; align-items: center; justify-content: center;">
-        <img style="height: 540px; box-shadow: 12px 12px 8px #ccc; margin-right: 120px; display: inline" src="data:image/png;base64,${req.body.artwork}" alt="No image" />
-        <p style="font-size: 48px; display: inline; width: auto;">
+    <body>
+        <img src="data:image/png;base64,${req.body.artwork}" alt="" />
+        <p>
             <strong>${req.body.title}</strong>
             <br/>
             <br/>
