@@ -30,7 +30,7 @@ export default async (req, res) => {
     headless: true,
     args: chromium.args,
     executablePath: await chromium.executablePath,
-    defaultViewport: { width: 1800, height: 700 },
+    defaultViewport: { width: 1280, height: 720 },
   });
   const page = await browser.newPage();
 
@@ -60,7 +60,7 @@ export default async (req, res) => {
             }
 
             body {
-              padding: 80px 120px;
+              padding: 180px 120px;
               margin: 0;
               display: flex;
               align-items: center;
@@ -68,15 +68,15 @@ export default async (req, res) => {
             }
 
             img {
-              height: 540px;
-              width: 540px;
+              height: 360px;
+              width: 360px;
               box-shadow: 0 6px 16px #ccc;
               margin-right: 80px;
               color: #fff;
             }
 
             p {
-              font: 48px 'Inter';
+              font: 36px 'Inter';
             }
         </style>
     </head>
